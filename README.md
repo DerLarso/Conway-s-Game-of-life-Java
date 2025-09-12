@@ -18,4 +18,5 @@ By default, the first and last cell of each generation must always be a `.` (dot
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cellular-automata-java.git
+   git clone https://github.com/DerLarso/Rule-110.git
+2. Open the javaeditor of your choice and run the .java file
