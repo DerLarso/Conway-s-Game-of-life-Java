@@ -16,9 +16,10 @@ public class SpielDesLebens {
   } // end of main
   public void sandkiste(){
     int rule = 110;
+    int steps = 20;
     System.out.println(start);
     if (rule < 256) {
-      for (int i = 0; i < 20 ;i++ ) {
+      for (int i = 0; i < steps ;i++ ) {
         execute(ruleCreation(rule));
       } // end of for
     } else {
@@ -54,8 +55,7 @@ public class SpielDesLebens {
     } else {
       rules[0][1] = ".";  
     } // end of if-else
-    
-    
+
     if(rule >= 64){
       rule -= 64;
       rules[1][1] = "x";
@@ -100,24 +100,14 @@ public class SpielDesLebens {
     } else {
       rules[6][1] = ".";
     }
-    
-    
+
     if (rule >= 1) {
       rule -= 1;
       rules[7][1] = "x";
     } else {
       rules[7][1] = "."; 
     } // end of if-else
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     //toString(rules,columns,rows);
     return rules;
   }
