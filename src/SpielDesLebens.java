@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 
 public class SpielDesLebens {
-  private int columns = 8;
-  private int rows = 2;
+  private final int columns = 8;
+  private final int rows = 2;
   private String start = ".";
   public static void main(String[] args) {
     SpielDesLebens l = new SpielDesLebens();
@@ -122,7 +122,6 @@ public class SpielDesLebens {
     }
 
     if (rule >= 1) {
-      rule -= 1;
       rules[7][1] = "x";
     } else {
       rules[7][1] = "."; 
