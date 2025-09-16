@@ -18,23 +18,35 @@ public class SpielDesLebens {
   } // end of main
   public void sandkiste(){
     Scanner input = new Scanner(System.in);
-    System.out.println("Gib die Regel ein: ");
+    System.out.println("Please give the rule: ");
     int rule = input.nextInt();
-    System.out.println("Gib an wie viele Durchläufe es geben soll: ");
+    System.out.println("Enter the count of rows from the output: ");
     int steps = input.nextInt();
-    System.out.println("Gib den Start(z.B. ....................x. ).");
+    System.out.println("Give the start(for example: ....................x. ).");
     start += input.next() + ".";
     System.out.println(start.substring(1, start.length() - 1));
-    if (rule < 256) {
+    boolean check = inputCheck();
+    if (rule < 256 && rule > -1 && check) {
       String[][] rules = ruleCreation(rule);
       for (int i = 0; i < steps ;i++ ) {
         execute(rules);
       } // end of for
-    } else {
-      System.out.println("Die Regel hat einen zu hohen Wert!");  
+    } else if(check) {
+      System.out.println("The rule's value is above 255 or under 0!");
     } // end of if-else
     input.close();
   }
+
+  public boolean inputCheck(){
+    for (int i = 0; i < start.length(); i++){
+      if (start.charAt(i) != '.' && start.charAt(i) != 'x'){
+        System.out.println("Remember: Only use . and x!");
+        return false;
+      }
+    }
+    return true;
+  }
+
   
   public String[][] ruleCreation(int rule){
     
