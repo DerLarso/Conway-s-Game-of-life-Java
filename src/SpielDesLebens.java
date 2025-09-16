@@ -20,14 +20,16 @@ public class SpielDesLebens {
     Scanner input = new Scanner(System.in);
     System.out.println("Enter the character for a dead cell: ");
     tot = input.next();
-    start = tot;
+    charCheck(tot);
+    start = tot ;
     System.out.println("Enter the character for a living cell: ");
     lebend = input.next();
+    charCheck(lebend);
     System.out.println("Please give the rule: ");
     int rule = input.nextInt();
     System.out.println("Enter the count of rows from the output: ");
     int steps = input.nextInt();
-    System.out.println("Give the start(for example: ....................x. ).");
+    System.out.println("Give the start(for example: " +tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+lebend+tot + ":");
     start += input.next() + tot;
     System.out.println(start.substring(1, start.length() - 1));
     boolean check = inputCheck();
@@ -41,7 +43,12 @@ public class SpielDesLebens {
     } // end of if-else
     input.close();
   }
-
+  public void charCheck(String test){
+    if(test.length() != 1 ){
+      System.out.println("Only 1 Character is allowed!");
+      System.exit(1);
+    }
+  }
   public boolean inputCheck(){
     for (int i = 0; i < start.length(); i++){
       if (!start.substring(i,i+1).equals(tot) && !start.substring(i,i+1).equals(lebend)){
