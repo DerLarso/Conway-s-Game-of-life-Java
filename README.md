@@ -3,7 +3,6 @@
 A little Java program that simulates **elementary cellular automata** for all rules from **0 up to 255**.  
 
 The program is designed to work with configurations using **`.`** (dead cell) and **`x`** (alive cell).  
-By default, the first and last cell of each generation must always be a `.` (dot).  
 
 ---
 
