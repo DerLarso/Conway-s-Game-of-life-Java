@@ -48,7 +48,6 @@ public class SpielDesLebens {
   
   public String[][] ruleCreation(int rule){
 
-
     int columns = 8;
     int rows = 2;
     String[][] rules = new String[columns][rows];
@@ -90,23 +89,20 @@ public class SpielDesLebens {
       rules[2][1] = ".";  
     } // end of if-else
     
-    
     if (rule >= 16) {
       rule -= 16;
       rules[3][1] = "x";
     } else {
       rules[3][1] = ".";
     }
-    
-    
+
     if (rule >= 8) {
       rule -= 8;
       rules[4][1] = "x";
     } else{
       rules[4][1] = ".";
     } 
-    
-    
+
     if (rule >= 4) {
       rule -= 4;
       rules[5][1] = "x";
@@ -135,7 +131,6 @@ public class SpielDesLebens {
     for (int i = 1; i < start.length()-1 ; i ++ ) {
       result += regelAnwendung(regel, start.substring(i-1,i+2));
     } // end of for
-    
     result += ".";
     start = result;
     System.out.println(start.substring(1,start.length()-1));
@@ -149,10 +144,7 @@ public class SpielDesLebens {
         break;
       } // end of if
     } // end of for
-    
     return c;
-    
-    
   }
   public void toString(String[][] input, int columns, int rows){
     for (int i = 0; i < columns; i++) {
