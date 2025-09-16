@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  *
  * Beschreibung
@@ -9,23 +11,29 @@
 public class SpielDesLebens {
   private int columns = 8;
   private int rows = 2;
-  private String start = "...........................x.";
+  private String start = ".";
   public static void main(String[] args) {
     SpielDesLebens l = new SpielDesLebens();
     l.sandkiste();
   } // end of main
   public void sandkiste(){
-    int rule = 110;
-    int steps = 20;
-    System.out.println(start);
+    Scanner input = new Scanner(System.in);
+    System.out.println("Gib die Regel ein: ");
+    int rule = input.nextInt();
+    System.out.println("Gib an wie viele Durchläufe es geben soll: ");
+    int steps = input.nextInt();
+    System.out.println("Gib den Start(z.B. ....................x. ).");
+    start += input.next() + ".";
+    System.out.println(start.substring(1, start.length() - 1));
     if (rule < 256) {
+      String[][] rules = ruleCreation(rule);
       for (int i = 0; i < steps ;i++ ) {
-        execute(ruleCreation(rule));
+        execute(rules);
       } // end of for
     } else {
       System.out.println("Die Regel hat einen zu hohen Wert!");  
     } // end of if-else
-    
+    input.close();
   }
   
   public String[][] ruleCreation(int rule){
@@ -119,7 +127,7 @@ public class SpielDesLebens {
     
     result += ".";
     start = result;
-    System.out.println(start);
+    System.out.println(start.substring(1,start.length()-1));
   }
   
   public String regelAnwendung(String[][] regel, String a){
