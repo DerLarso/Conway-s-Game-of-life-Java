@@ -21,7 +21,7 @@ public class SpielDesLebens {
     System.out.println("Enter the character for a dead cell: ");
     tot = input.next();
     charCheck(tot);
-    start = tot ;
+    start = tot;
     System.out.println("Enter the character for a living cell: ");
     lebend = input.next();
     charCheck(lebend);
@@ -29,6 +29,7 @@ public class SpielDesLebens {
     int rule = input.nextInt();
     System.out.println("Enter the count of rows from the output: ");
     int steps = input.nextInt();
+    start = tot.repeat(steps);
     System.out.println("Give the start(for example: " +tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+tot+lebend+tot + ":");
     start += input.next() + tot;
     System.out.println(start.substring(1, start.length() - 1));
