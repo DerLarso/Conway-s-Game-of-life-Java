@@ -17,5 +17,5 @@ The program is designed to work with configurations using **`.`** (dead cell) an
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone https://github.com/DerLarso/Rule-110.git
+   git clone https://github.com/DerLarso/Conway-s-Game-of-life-Java.git
 2. Open the javaeditor of your choice and run the .java file
